@@ -32,5 +32,9 @@ public class WordWrapTest
         assertEquals(new WordWrap().wrap("Shakespeare", 9), "Shakespea\nre");
     }
 
-
+    @Test
+    public void shouldReturnWrappedPhraseforEveryLineInPhrase()
+    {
+        assertEquals(new WordWrap().wrap("hi hello how are you, I am good thank you", 9), "hi hello\nhow are\nyou, I am\ngood\nthank you");
+    }
 }
