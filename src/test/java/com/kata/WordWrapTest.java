@@ -33,7 +33,7 @@ public class WordWrapTest
     }
 
     @Test
-    public void shouldReturnWrappedPhraseforEveryLineInPhrase()
+    public void shouldReturnWrappedPhraseForEveryLineInPhrase()
     {
         assertEquals(new WordWrap().wrap("hi hello how are you, I am good thank you", 9), "hi hello\nhow are\nyou, I am\ngood\nthank you");
     }
