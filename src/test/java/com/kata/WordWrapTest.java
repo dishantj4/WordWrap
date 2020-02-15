@@ -25,4 +25,12 @@ public class WordWrapTest
         assertEquals(new WordWrap().wrap("how are you", 11), "how are you");
 
     }
+
+    @Test
+    public void shouldReturnWrappedPhraseEvenWhenThereIsNoSpace()
+    {
+        assertEquals(new WordWrap().wrap("Shakespeare", 9), "Shakespea\nre");
+    }
+
+
 }
