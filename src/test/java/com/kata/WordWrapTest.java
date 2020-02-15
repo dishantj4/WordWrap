@@ -18,4 +18,11 @@ public class WordWrapTest
         assertEquals(new WordWrap().wrap("hello how are you", 11), "hello how\nare you");
     }
 
+
+    @Test
+    public void shouldReturnPhraseInOneLineWhenPhraseIsLessThanMaxLength()
+    {
+        assertEquals(new WordWrap().wrap("how are you", 11), "how are you");
+
+    }
 }

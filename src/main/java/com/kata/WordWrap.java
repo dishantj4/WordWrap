@@ -13,8 +13,9 @@ public class WordWrap
         StringBuilder wrappedPhrase = new StringBuilder();
         wrappedPhrase.append(phrase);
         if (phrase.length() > wrapWidth) {
-            String insertNewLine = "\n";
-            wrappedPhrase.insert(wrapWidth - 1, insertNewLine);
+            char insertNewLine = '\n';
+            int indexOfBlank = phrase.lastIndexOf(" ",wrapWidth);
+            wrappedPhrase.setCharAt(indexOfBlank, insertNewLine);
         }
         return wrappedPhrase.toString();
     }
