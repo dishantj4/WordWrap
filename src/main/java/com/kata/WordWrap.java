@@ -12,10 +12,11 @@ public class WordWrap
     public String wrap(String phrase, int wrapWidth) {
         StringBuilder wrappedPhrase = new StringBuilder();
         wrappedPhrase.append(phrase);
+        char insertNewLine = '\n';
+        String space = " ";
         if (phrase.length() > wrapWidth) {
-            char insertNewLine = '\n';
-            int indexOfBlank = phrase.lastIndexOf(" ",wrapWidth);
-            wrappedPhrase.setCharAt(indexOfBlank, insertNewLine);
+            int indexOfLastSpaceInLineToWrap = phrase.lastIndexOf(space,wrapWidth);
+            wrappedPhrase.setCharAt(indexOfLastSpaceInLineToWrap, insertNewLine);
         }
         return wrappedPhrase.toString();
     }
