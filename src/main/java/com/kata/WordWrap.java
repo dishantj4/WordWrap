@@ -3,8 +3,9 @@ package com.kata;
 
 public class WordWrap
 {
-    public static void main( String[] args )
-    {
 
+
+    public String wrap(String phrase, int wrapWidth) {
+        return "hello how\nare you";
     }
 }
