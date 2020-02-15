@@ -4,9 +4,7 @@ package com.kata;
 public class WordWrap
 {
 
-    public static void main(String[] args) {
-        System.out.println(new WordWrap().wrap("shakespeare", 9));
-    }
+
 
 
     public String wrap(String phrase, int wrapWidth) {
@@ -14,13 +12,27 @@ public class WordWrap
         wrappedPhrase.append(phrase);
         char insertNewLine = '\n';
         String space = " ";
-        int indexValueWhenNoSpaceInPhrase = -1;
-        if (phrase.length() > wrapWidth) {
-            int indexOfLastSpaceInLineToWrap = phrase.lastIndexOf(space,wrapWidth);
+        int pointerInPhrase =0;
+        int indexValueWhenNoSpaceInPhrase = pointerInPhrase -1;
+        while (pointerInPhrase + wrapWidth < phrase.length() ) {
+            int indexOfLastSpaceInLineToWrap = phrase.lastIndexOf(space,pointerInPhrase + wrapWidth);
+
             if (indexOfLastSpaceInLineToWrap == indexValueWhenNoSpaceInPhrase)
+            {
                 wrappedPhrase.insert(wrapWidth, insertNewLine);
+                pointerInPhrase = pointerInPhrase + wrapWidth;
+            }
+
             else
-            wrappedPhrase.setCharAt(indexOfLastSpaceInLineToWrap, insertNewLine);
+            {
+                wrappedPhrase.setCharAt(indexOfLastSpaceInLineToWrap, insertNewLine);
+                pointerInPhrase = indexOfLastSpaceInLineToWrap + 1;
+                indexValueWhenNoSpaceInPhrase++;
+
+            }
+
+
+
         }
         return wrappedPhrase.toString();
     }
