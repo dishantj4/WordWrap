@@ -18,6 +18,7 @@ Maven 3.0
 Follow below instructions to run this app
 ````
 -git clone https://github.com/dishantj4/WordWrap.git
+-Go to src/test/java/com/kata/WordWrapTest.java and run as junit test.
 
 ````
 
