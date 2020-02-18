@@ -1,10 +1,7 @@
 package com.kata;
 
 
-public class WordWrap
-{
-
-
+public class WordWrap {
 
 
     public String wrap(String phrase, int wrapWidth) {
@@ -12,31 +9,26 @@ public class WordWrap
         wrappedPhrase.append(phrase);
         char insertNewLine = '\n';
         String space = " ";
-        int pointerInPhrase =0;
-        int indexValueWhenNoSpaceInPhrase = pointerInPhrase -1;
-        while (pointerInPhrase + wrapWidth < phrase.length() ) {
-            int indexOfLastSpaceInLineToWrap = phrase.lastIndexOf(space,pointerInPhrase + wrapWidth);
+        int pointerInPhrase = 0;
+        int indexValueWhenNoSpaceInPhrase = pointerInPhrase - 1;
+        while (pointerInPhrase + wrapWidth < phrase.length()) {
+            int indexOfLastSpaceInLineToWrap = phrase.lastIndexOf(space, pointerInPhrase + wrapWidth);
 
-            if (indexOfLastSpaceInLineToWrap == indexValueWhenNoSpaceInPhrase)
-            {
+            if (indexOfLastSpaceInLineToWrap == indexValueWhenNoSpaceInPhrase) {
                 wrappedPhrase.insert(wrapWidth, insertNewLine);
                 pointerInPhrase = pointerInPhrase + wrapWidth;
-            }
-
-            else
-            {
+                indexValueWhenNoSpaceInPhrase++;
+            } else {
                 wrappedPhrase.setCharAt(indexOfLastSpaceInLineToWrap, insertNewLine);
                 pointerInPhrase = indexOfLastSpaceInLineToWrap + 1;
-                indexValueWhenNoSpaceInPhrase++;
+
 
             }
-
 
 
         }
         return wrappedPhrase.toString();
     }
-
 
 
 }
